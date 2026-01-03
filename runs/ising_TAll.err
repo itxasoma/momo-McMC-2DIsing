@@ -1,0 +1,146 @@
+lattice.f90:45:29:
+
+             nbr(i,1) = ina(1,x) + L*(y-1)
+                             1
+Warning: Legacy Extension: REAL array index at (1)
+lattice.f90:45:23:
+
+             nbr(i,1) = ina(1,x) + L*(y-1)
+                       1
+Warning: Possible change of value in conversion from REAL(8) to INTEGER(4) at (1) [-Wconversion]
+lattice.f90:46:29:
+
+             nbr(i,2) = ina(0,x) + L*(y-1)
+                             1
+Warning: Legacy Extension: REAL array index at (1)
+lattice.f90:46:23:
+
+             nbr(i,2) = ina(0,x) + L*(y-1)
+                       1
+Warning: Possible change of value in conversion from REAL(8) to INTEGER(4) at (1) [-Wconversion]
+lattice.f90:47:36:
+
+             nbr(i,3) = x + L*(ina(1,y)-1)
+                                    1
+Warning: Legacy Extension: REAL array index at (1)
+lattice.f90:47:23:
+
+             nbr(i,3) = x + L*(ina(1,y)-1)
+                       1
+Warning: Possible change of value in conversion from REAL(8) to INTEGER(4) at (1) [-Wconversion]
+lattice.f90:48:36:
+
+             nbr(i,4) = x + L*(ina(0,y)-1)
+                                    1
+Warning: Legacy Extension: REAL array index at (1)
+lattice.f90:48:23:
+
+             nbr(i,4) = x + L*(ina(0,y)-1)
+                       1
+Warning: Possible change of value in conversion from REAL(8) to INTEGER(4) at (1) [-Wconversion]
+lattice.f90:43:11:
+
+         do x = 1, L
+           1
+Warning: Deleted feature: Loop variable at (1) must be integer
+lattice.f90:42:7:
+
+     do y = 1, L
+       1
+Warning: Deleted feature: Loop variable at (1) must be integer
+ising_energy.f90:87:8:
+
+     M = sums
+        1
+Warning: Possible change of value in conversion from REAL(8) to INTEGER(4) at (1) [-Wconversion]
+ising_energy.f90:23:8:
+
+     E = -0.5d0 * sums
+        1
+Warning: Possible change of value in conversion from REAL(8) to INTEGER(4) at (1) [-Wconversion]
+r1279.f90:72:13:
+
+     IMPLICIT NONE
+             1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:74:12:
+
+     INTEGER ibit, ispoke, one_bit, iseed, localseed, NBITM1
+            1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:75:9:
+
+     REAL ran2
+         1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:87:1:
+
+  index1(ispoke) = iand(ispoke - 1279, 2047)
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:88:1:
+
+  index2(ispoke) = iand(ispoke - 418, 2047)
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:102:1:
+
+  irand(ispoke) = 0
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:103:1:
+
+  do ibit = 0, NBITM1
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:104:1:
+
+      one_bit = 0
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:105:1:
+
+      if (ran2(localseed) > 0.5) one_bit = 1
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:106:1:
+
+      irand(ispoke) = ior(irand(ispoke), ishft(one_bit, ibit))
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:107:1:
+
+  end do
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:108:1:
+
+  irand(ispoke) = 2 * irand(ispoke) + 1
+ 1
+Warning: Nonconforming tab character at (1) [-Wtabs]
+r1279.f90:28:26:
+
+     REAL    r1279, inv_max
+                          1
+Warning: Unused variable ‘inv_max’ declared at (1) [-Wunused-variable]
+ran2.f:6:25:
+
+      *NTAB=32,NDIV=1+IMM1/NTAB,EPS=1.2e-7,RNMX=1.-EPS)
+                         1
+Warning: Integer division truncated to constant ‘67108861’ at (1) [-Winteger-division]
+ran2.f:4:56:
+
+       PARAMETER (IM1=2147483563,IM2=2147483399,AM=1./IM1,IMM1=IM1-1,
+                                                        1
+Warning: Change of value in conversion from ‘INTEGER(4)’ to ‘REAL(4)’ at (1) [-Wconversion]
+ran2.f:17:28:
+
+ran2.f:13:72:
+
+         do 11 j=NTAB+8,1,-1
+                                                                        2
+ran2.f:17:28:
+
+           if (j.le.NTAB) iv(j)=idum
+                            1
+Warning: Array reference at (1) out of bounds (40 > 32) in loop beginning at (2) [-Wdo-subscript]

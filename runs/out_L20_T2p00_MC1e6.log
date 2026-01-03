@@ -1,0 +1,55 @@
+ =============================================
+   2D ISING MODEL - MONTE CARLO SIMULATION    
+ =============================================
+
+ Input Parameters:
+   L =          20
+   T =   2.0000000000000000     
+   nMCS =              1000000
+   nmeas =                   10
+   MCS_discard =                 1000
+   seed =       12345
+
+ System:
+   N = L^2 =         400
+   beta = 1/T =  0.50000000000000000     
+
+ Initializing random spins...
+   Initial E/N =   0.0000000000000000     
+   Initial M/N =  -4.4999999999999998E-002
+
+ Starting Monte Carlo simulation...
+
+  MCS:       100000  ( 10.00% complete)
+  MCS:       200000  ( 20.00% complete)
+  MCS:       300000  ( 30.00% complete)
+  MCS:       400000  ( 40.00% complete)
+  MCS:       500000  ( 50.00% complete)
+  MCS:       600000  ( 60.00% complete)
+  MCS:       700000  ( 70.00% complete)
+  MCS:       800000  ( 80.00% complete)
+  MCS:       900000  ( 90.00% complete)
+  MCS:      1000000  (100.00% complete)
+
+ Simulation complete!
+
+ =========================================
+              FINAL RESULTS               
+ =========================================
+  Speed:  0.51077E+08 flips/sec
+
+  <E>/N   =  -1.7457150150
+  <|M|>/N =   0.9116084585
+ =========================================
+
+ Performing binning analysis...
+ Binning analysis complete!
+
+ Output files created:
+   timeseries_L20_T2.00_MCSTOT1000000.dat
+   binning_E_L20_T2.00_MCTOT1000000.dat
+   binning_M_L20_T2.00_MCTOT1000000.dat
+
+ =============================================
+        PROGRAM COMPLETED SUCCESSFULLY       
+ =============================================
