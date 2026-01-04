@@ -3,7 +3,6 @@ PROGRAM practice3
   use GLOBAL
   use lattice
   use ising_energy
-  use block
   IMPLICIT NONE
   
   ! ============ VARIABLE DECLARATIONS ============
@@ -13,7 +12,6 @@ PROGRAM practice3
   integer(kind=8):: MCS, MC_count
   integer(kind=8):: nMCS_local, nmeas_local, MCS_discard
   integer(kind=8):: n_measurements, n_after_discard, idx_start
-  
   double precision:: avg_E, avg_M, avg_E_data, sigma_E_data
   double precision, allocatable:: table(:), E_data(:), M_data(:), absM_data(:)
   double precision:: time_start, time_end, flips_per_sec
@@ -233,45 +231,6 @@ PROGRAM practice3
   write(*,'(A,F14.10)') "  <E>/N   = ", avg_E/dble(N)
   write(*,'(A,F14.10)') "  <|M|>/N = ", avg_M/dble(N)
   write(*,*) "========================================="
-  write(*,*)
-  
-  !----------------------------------------------------------------------------
-  ! BINNING ANALYSIS
-  !----------------------------------------------------------------------------
-  
-  write(*,*) "Performing binning analysis..."
-  
-  ! Calculate index where to start (after discarding)
-  idx_start = MCS_discard / nmeas_local + 1
-  
-  ! Binning for Energy
-  open(80, file=filename_binning_E)
-  write(80,*) "# m   <E>/N   sigma_E/N"
-  
-  do i = 0, 25
-    if (dble(n_after_discard) / dble(2**i) .lt. 2.d0) exit
-    call average_block(E_data(idx_start:MC_count), 2**i, avg_E_data, sigma_E_data)
-    write(80,*) 2**i, avg_E_data/dble(N), sigma_E_data/dble(N)
-  enddo
-  close(80)
-  
-  ! Binning for |Magnetization|
-  allocate(absM_data(n_after_discard))
-  absM_data = abs(M_data(idx_start:MC_count))
-  
-  open(81, file=filename_binning_M)
-  write(81,*) "# m   <|M|>/N   sigma_|M|/N"
-  
-  do i = 0, 25
-    if (dble(n_after_discard) / dble(2**i) .lt. 2.d0) exit
-    call average_block(absM_data, 2**i, avg_E_data, sigma_E_data)
-    write(81,*) 2**i, avg_E_data/dble(N), sigma_E_data/dble(N)
-  enddo
-  close(81)
-  
-  deallocate(absM_data)
-  
-  write(*,*) "Binning analysis complete!"
   write(*,*)
   
   !----------------------------------------------------------------------------
