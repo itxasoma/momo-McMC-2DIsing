@@ -4,11 +4,8 @@ TARGET = mdinamics
 
 all: $(TARGET)
 
-$(TARGET): parameters.o lattice.o ising_energy.o main.o r1279.o ran2.o binning.o
+$(TARGET): parameters.o lattice.o ising_energy.o main.o r1279.o ran2.o 
 	$(FC) $(FFLAGS) -o $@ $^
-
-binning.o: binning.f90
-	$(FC) $(FFLAGS) -c $<
 
 ran2.o: ran2.f
 	$(FC) $(FFLAGS) -c $<
@@ -25,7 +22,7 @@ lattice.o: lattice.f90 parameters.o
 ising_energy.o: ising_energy.f90 parameters.o
 	$(FC) $(FFLAGS) -c $<
 
-main.o: main.f90 parameters.o lattice.o ising_energy.o binning.o r1279.o ran2.o
+main.o: main.f90 parameters.o lattice.o ising_energy.o r1279.o ran2.o
 	$(FC) $(FFLAGS) -c $<
 
 run: $(TARGET)
